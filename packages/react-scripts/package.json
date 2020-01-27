@@ -1,6 +1,6 @@
 {
-  "name": "@glazunov/react-scripts",
-  "version": "3.3.0-wasm",
+  "name": "@hastyai/react-scripts",
+  "version": "3.3.0-hasty",
   "description": "Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",

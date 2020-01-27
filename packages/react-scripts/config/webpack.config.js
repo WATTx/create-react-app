@@ -396,6 +396,12 @@ module.exports = function(webpackEnv) {
                 },
               ],
             },
+            // load WASM as a file (no special processing, just add type javascript/auto)
+            {
+              test: /\.wasm$/,
+              loader: 'file-loader',
+              type: 'javascript/auto',
+            },
             // Process WebWorker JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
