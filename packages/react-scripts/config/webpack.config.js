@@ -302,7 +302,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
-        'react-dom': '@hot-loader/react-dom'
+        'react-dom': '@hot-loader/react-dom',
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -384,6 +384,17 @@ module.exports = function(webpackEnv) {
                 limit: imageInlineSizeLimit,
                 name: 'static/media/[name].[hash:8].[ext]',
               },
+            },
+            // process WASM with its loader
+            {
+              test: /\.wasm$/,
+              include: path.resolve(__dirname, 'src'),
+              use: [
+                {
+                  loader: require.resolve('wasm-loader'),
+                  options: {},
+                },
+              ],
             },
             // Process WebWorker JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
