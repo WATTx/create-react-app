@@ -1,3 +1,5 @@
+'use strict';
+
 require('jsdom-worker');
 
 module.exports = {
@@ -9,4 +11,3 @@ module.exports = {
     return 'cssTransform';
   },
 };
-
